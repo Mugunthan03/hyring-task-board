@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0f2f5;
+  --foreground: #172b4d;
+  --surface: #ffffff;
+  --border: #dcdfe4;
+  --muted: #5e6c84;
+  --accent: #0c66e4;
+  --header: #1d2125;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.board-page {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+.board-shell {
+  box-shadow:
+    0 1px 1px rgba(9, 30, 66, 0.04),
+    0 4px 16px rgba(9, 30, 66, 0.08);
+}
+
+@keyframes board-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #ebecf0 25%, #f4f5f7 50%, #ebecf0 75%);
+  background-size: 200% 100%;
+  animation: board-shimmer 1.4s ease-in-out infinite;
+}
